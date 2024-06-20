@@ -18,11 +18,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
     return (
         <aside id="sidebar" className={isOpen ? "sidebar-responsive" : ""}>
             <div className='sidebar-title'>
-                <div className="font-bold text-2xl cursor-pointer flex items-center font-[poppins] text-black">
-                    {/* You can add a logo or title here */}
-                    Sidebar
+                <div className="">
+                    
                 </div>
-                <span className='icon close_icon text-[#fff] text-2xl' onClick={toggleSidebar}>X</span>
+                <span className='icon close_icon' onClick={toggleSidebar}>X</span>
             </div>
 
             <ul className='sidebar-list'>

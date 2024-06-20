@@ -29,14 +29,16 @@ const Users: React.FC = () => {
     setModalIsOpen(false);
 
    };
+
+   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
   return (
     <div className='grid-container'>
-       <Header OpenSidebar={function (): void {
-              throw new Error('Function not implemented.');
-          } } />
-        <Sidebar openSidebarToggle={false} OpenSidebar={function (): void {
-              throw new Error('Function not implemented.');
-          } } />
+          <Header OpenSidebar={toggleSidebar} />
+          <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
             <div>
                 <h1 className='users'>Users</h1>

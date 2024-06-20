@@ -2,6 +2,7 @@ import React from 'react'
 import Header from "../Components/Header";
 import Sidebar from '../Components/Sidebar';
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { useState } from 'react';
 import "../Css/Dashboard.scss";
 import "../Css/UserDetails.scss";
 import { AiOutlineUser } from "react-icons/ai";
@@ -11,14 +12,17 @@ import line from "../assets/line.png";
 
 
 const UserDetails: React.FC = () => {
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
   return (
     <div className='grid-container'>
-       <Header OpenSidebar={function (): void {
-              throw new Error('Function not implemented.');
-          } } />
-        <Sidebar openSidebarToggle={false} OpenSidebar={function (): void {
-              throw new Error('Function not implemented.');
-          } } />
+       <Header OpenSidebar={toggleSidebar} />
+       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
             <div>
                   <div className='arrow'>

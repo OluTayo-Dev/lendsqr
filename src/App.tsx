@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './Pages/LoginPage';
 import Users1 from './Pages/Dashboard';
 import Users from './Pages/Users';
 import UserDetails from './Pages/UserDetails';
-import Header from './Components/Header';
-import Sidebar from './Components/Sidebar';
 import './Css/Dashboard.scss';
 
 const App: React.FC = () => {
